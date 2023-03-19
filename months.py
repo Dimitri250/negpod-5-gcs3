@@ -1,13 +1,14 @@
-#!/usr/bin/env python3
+long_months = ['january', 'march', 'may', 'july', 'august', 'october', 'december']
+short_months = ['april', 'june', 'september', 'november']
 
-# Days in months ranging from 28 to 31
-month = input("Enter the name of a month: ")
+month = input("Enter a month: ").lower()
 
-if month == "January" or month == "March" or month == "May" or month == "July" or month == "August" or month == "October" or month == "December":
-    print("The month of", month, "has 31 days.")
-elif month == "April" or month == "June" or month == "September" or month == "November":
-    print("The month of", month, "has 30 days.")
-elif month == "February":
-    print("The month of February has 28 or 29 days.")
+if month == "february":
+    print(f'{month} has 28 or 29 days.')
+elif month in long_months:
+    print(f'{month} has 31 days.')
+elif month in short_months:
+    print(f'{month} has 30 days.')
 else:
-    print("Invalid month name. Please enter a valid month name.")
+    print(f'{month} is not a valid month. These are the months I know: {", ".join(long_months)}, { ", ".join(short_months) } and february.' )
+
